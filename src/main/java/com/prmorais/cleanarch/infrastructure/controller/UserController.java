@@ -1,4 +1,4 @@
-package com.prmorais.cleanarch.controller;
+package com.prmorais.cleanarch.infrastructure.controller;
 
 import com.prmorais.cleanarch.model.User;
 import com.prmorais.cleanarch.service.UserService;
