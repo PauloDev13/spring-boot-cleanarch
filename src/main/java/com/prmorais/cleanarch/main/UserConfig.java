@@ -2,10 +2,10 @@ package com.prmorais.cleanarch.main;
 
 import com.prmorais.cleanarch.application.gateways.UserGateway;
 import com.prmorais.cleanarch.application.usecases.CreateUserInteractor;
-import com.prmorais.cleanarch.domain.entity.controller.UserDTOMapper;
+import com.prmorais.cleanarch.infrastructure.controller.UserDTOMapper;
 import com.prmorais.cleanarch.infrastructure.gateways.UserEntityMapper;
 import com.prmorais.cleanarch.infrastructure.gateways.UserRepositoryGateway;
-import com.prmorais.cleanarch.repository.UserRepository;
+import com.prmorais.cleanarch.infrastructure.persistence.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,7 +1,9 @@
 package com.prmorais.cleanarch.infrastructure.persistence;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table("USER")
 public class UserEntityPersistence {
   @Id
   private Long id;

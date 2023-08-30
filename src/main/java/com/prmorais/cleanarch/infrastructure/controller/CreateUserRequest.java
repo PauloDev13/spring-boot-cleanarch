@@ -1,4 +1,4 @@
-package com.prmorais.cleanarch.domain.entity.controller;
+package com.prmorais.cleanarch.infrastructure.controller;
 
 public record CreateUserRequest(
     String username,
