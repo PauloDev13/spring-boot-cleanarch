@@ -2,10 +2,10 @@ package com.prmorais.cleanarch.infrastructure.gateways;
 
 import com.prmorais.cleanarch.application.gateways.UserGateway;
 import com.prmorais.cleanarch.domain.entity.UserEntity;
+import com.prmorais.cleanarch.infrastructure.exception.RecordNotFoundException;
 import com.prmorais.cleanarch.infrastructure.persistence.UserEntityPersistence;
 import com.prmorais.cleanarch.infrastructure.persistence.UserRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.StreamSupport;
 
@@ -29,11 +29,21 @@ public class UserRepositoryGateway implements UserGateway {
     return userEntityMapper.toDomainObj(saveObj);
   }
 
+
   @Override
   public List<UserEntity> getAll() {
     Iterable<UserEntityPersistence> users = userRepository.findAll();
     List<UserEntityPersistence> usersEntity = StreamSupport.stream(users.spliterator(), false).toList();
     return userEntityMapper.toListDomainObjs(usersEntity);
+  }
+
+  @Override
+  public UserEntity findById(Long id) {
+    UserEntityPersistence userEntity = userRepository.findById(id)
+        .orElseThrow(() -> new RecordNotFoundException(id)
+        );
+    return userEntityMapper.toDomainObj(userEntity);
+
   }
 
 }

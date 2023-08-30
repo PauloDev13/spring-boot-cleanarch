@@ -18,4 +18,8 @@ public class CreateUserInteractor {
   public List<UserEntity> users() {
     return userGateway.getAll();
   }
+
+  public UserEntity findById(Long id) {
+    return userGateway.findById(id);
+  }
 }

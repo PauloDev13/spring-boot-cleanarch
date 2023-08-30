@@ -7,4 +7,5 @@ import java.util.List;
 public interface UserGateway {
   UserEntity createUser(UserEntity user);
   List<UserEntity> getAll();
+  UserEntity findById(Long id);
 }
